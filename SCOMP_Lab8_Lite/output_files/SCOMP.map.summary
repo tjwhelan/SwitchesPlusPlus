@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Jul 25 14:49:38 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : SCOMP
+Top-level Entity Name : SCOMP_System
+Family : MAX 10
+Total logic elements : 752
+    Total combinational functions : 697
+    Dedicated logic registers : 287
+Total registers : 287
+Total pins : 64
+Total virtual pins : 0
+Total memory bits : 32,768
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 0
