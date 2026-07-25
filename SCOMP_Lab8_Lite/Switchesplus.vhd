@@ -43,10 +43,6 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
   --Register for switches input (exists to support simulation)
   SIGNAL switches_input    : STD_LOGIC_VECTOR(9 DOWNTO 0);
 
-  --signal that controls when reads occur (allows for latching)
-  SIGNAL read_pulse        : STD_LOGIC;
-  SIGNAL write_pulse       : STD_LOGIC;
-
   -- Registers for modes
   SIGNAL sim_status        : STD_LOGIC; --simulation active or not
   SIGNAL filo_enabled      : STD_LOGIC; --filo enabled or not
@@ -63,11 +59,8 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
 
     --defining signals
     switches_input <= saved_sim WHEN sim_status = '1' else SWITCHES; 
-    difference_mask <= switches_input AND last_read_reg;
+    difference_mask <= switches_input XOR last_read_reg;
     mode_helper <= IO_READ & IO_ADDR;
-    read_pulse <= '1' WHEN (IO_READ = '1') AND (mode /= invalid) else
-                  '0';
-    write_pulse <= '1' WHEN (IO_WRITE = '1') AND (mode /= invalid) else '0';
 
     --mode assignments that allow the same address to be written to and read from
     WITH mode_helper SELECT

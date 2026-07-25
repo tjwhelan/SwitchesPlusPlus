@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Sat Jul 25 17:13:09 2026
+Sat Jul 25 18:28:36 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 Patches 0.02std SC Lite Edition
 
 
@@ -56,15 +56,15 @@ on the Quartus Prime software download page.
 +------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                         ;
 +------------------------------------+-----------------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 25 17:13:09 2026                           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 25 18:28:36 2026                           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 Patches 0.02std SC Lite Edition ;
 ; Revision Name                      ; SCOMP                                                           ;
 ; Top-level Entity Name              ; SCOMP_System                                                    ;
 ; Family                             ; MAX 10                                                          ;
-; Total logic elements               ; 760                                                             ;
-;     Total combinational functions  ; 705                                                             ;
-;     Dedicated logic registers      ; 287                                                             ;
-; Total registers                    ; 287                                                             ;
+; Total logic elements               ; 801                                                             ;
+;     Total combinational functions  ; 746                                                             ;
+;     Dedicated logic registers      ; 290                                                             ;
+; Total registers                    ; 290                                                             ;
 ; Total pins                         ; 64                                                              ;
 ; Total virtual pins                 ; 0                                                               ;
 ; Total memory bits                  ; 32,768                                                          ;
@@ -170,7 +170,7 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 24          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -216,7 +216,7 @@ on the Quartus Prime software download page.
 ; altram.inc                       ; yes             ; Megafunction                           ; t:/altera_lite/quartus/libraries/megafunctions/altram.inc                                      ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; t:/altera_lite/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
 ; db/altsyncram_his3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/db/altsyncram_his3.tdf ;         ;
-; switchesplusdemo.mif             ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/switchesplusdemo.mif   ;         ;
+; SwitchesPlusDemo.mif             ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SwitchesPlusDemo.mif   ;         ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; t:/altera_lite/quartus/libraries/megafunctions/lpm_clshift.tdf                                 ;         ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; t:/altera_lite/quartus/libraries/megafunctions/lpm_bustri.tdf                                  ;         ;
 +----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------------+---------+
@@ -227,20 +227,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                        ;
 +---------------------------------------------+------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 760                                                                          ;
+; Estimated Total logic elements              ; 801                                                                          ;
 ;                                             ;                                                                              ;
-; Total combinational functions               ; 705                                                                          ;
+; Total combinational functions               ; 746                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 355                                                                          ;
+;     -- 4 input functions                    ; 398                                                                          ;
 ;     -- 3 input functions                    ; 279                                                                          ;
-;     -- <=2 input functions                  ; 71                                                                           ;
+;     -- <=2 input functions                  ; 69                                                                           ;
 ;                                             ;                                                                              ;
 ; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 648                                                                          ;
-;     -- arithmetic mode                      ; 57                                                                           ;
+;     -- normal mode                          ; 688                                                                          ;
+;     -- arithmetic mode                      ; 58                                                                           ;
 ;                                             ;                                                                              ;
-; Total registers                             ; 287                                                                          ;
-;     -- Dedicated logic registers            ; 287                                                                          ;
+; Total registers                             ; 290                                                                          ;
+;     -- Dedicated logic registers            ; 290                                                                          ;
 ;     -- I/O registers                        ; 0                                                                            ;
 ;                                             ;                                                                              ;
 ; I/O pins                                    ; 64                                                                           ;
@@ -252,9 +252,9 @@ on the Quartus Prime software download page.
 ;     -- PLLs                                 ; 1                                                                            ;
 ;                                             ;                                                                              ;
 ; Maximum fan-out node                        ; PLL:inst1|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 258                                                                          ;
-; Total fan-out                               ; 3646                                                                         ;
-; Average fan-out                             ; 3.21                                                                         ;
+; Maximum fan-out                             ; 260                                                                          ;
+; Total fan-out                               ; 3823                                                                         ;
+; Average fan-out                             ; 3.24                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 
 
@@ -263,8 +263,8 @@ on the Quartus Prime software download page.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 705 (0)             ; 287 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 64   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
-;    |DIG_IN:inst7|                         ; 62 (62)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN          ; work         ;
+; |SCOMP_System                             ; 746 (0)             ; 290 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 64   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
+;    |DIG_IN:inst7|                         ; 67 (67)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN          ; work         ;
 ;    |DIG_OUT:inst6|                        ; 1 (1)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT         ; work         ;
 ;    |HEX_DISP_6:inst9|                     ; 50 (8)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                          ; HEX_DISP_6      ; work         ;
 ;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                           ; HEX_DISP        ; work         ;
@@ -276,11 +276,11 @@ on the Quartus Prime software download page.
 ;    |PLL:inst1|                            ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL:inst1                                                                 ; PLL             ; work         ;
 ;       |altpll:altpll_component|           ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL:inst1|altpll:altpll_component                                         ; altpll          ; work         ;
 ;          |PLL_altpll:auto_generated|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL:inst1|altpll:altpll_component|PLL_altpll:auto_generated               ; PLL_altpll      ; work         ;
-;    |SCOMP:inst|                           ; 443 (361)           ; 184 (184)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP           ; work         ;
+;    |SCOMP:inst|                           ; 481 (399)           ; 187 (187)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP           ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_his3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_his3:auto_generated ; altsyncram_his3 ; work         ;
 ;       |lpm_clshift:shifter|               ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift     ; work         ;
-;    |SWITCHES_PLUS:inst3|                  ; 102 (102)           ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SWITCHES_PLUS:inst3                                                       ; SWITCHES_PLUS   ; work         ;
+;    |SWITCHES_PLUS:inst3|                  ; 100 (100)           ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SWITCHES_PLUS:inst3                                                       ; SWITCHES_PLUS   ; work         ;
 ;    |TIMER:inst4|                          ; 19 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                               ; TIMER           ; work         ;
 ;       |lpm_bustri:IO_BUS|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4|lpm_bustri:IO_BUS                                             ; lpm_bustri      ; work         ;
 ;    |clk_div:inst5|                        ; 27 (27)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                             ; clk_div         ; work         ;
@@ -307,35 +307,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SCOMP_System|SCOMP:inst|state                                                                                                                                                                                                                                                                                                                                          ;
-+-----------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
-; Name            ; state.ex_out2 ; state.ex_out ; state.ex_in2 ; state.ex_in ; state.ex_call ; state.ex_return ; state.ex_jzero ; state.ex_jneg ; state.ex_jump ; state.ex_shift ; state.ex_xor ; state.ex_or ; state.ex_and ; state.ex_addi ; state.ex_add ; state.ex_loadi ; state.ex_store2 ; state.ex_store ; state.ex_load ; state.ex_nop ; state.decode ; state.fetch ; state.init ;
-+-----------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
-; state.init      ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 0          ;
-; state.fetch     ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 1           ; 1          ;
-; state.decode    ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 1            ; 0           ; 1          ;
-; state.ex_nop    ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 1            ; 0            ; 0           ; 1          ;
-; state.ex_load   ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 1             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_store  ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 1              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_store2 ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 1               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_loadi  ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 1              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_add    ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 1            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_addi   ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 1             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_and    ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 1            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_or     ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 1           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_xor    ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 1            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_shift  ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 1              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jump   ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 1             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jneg   ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 1             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jzero  ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 1              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_return ; 0             ; 0            ; 0            ; 0           ; 0             ; 1               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_call   ; 0             ; 0            ; 0            ; 0           ; 1             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_in     ; 0             ; 0            ; 0            ; 1           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_in2    ; 0             ; 0            ; 1            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_out    ; 0             ; 1            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_out2   ; 1             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-+-----------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|SCOMP:inst|state                                                                                                                                                                                                                                                                                                                                                                                           ;
++-----------------+-----------------+---------------+--------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+; Name            ; state.ex_jnzero ; state.ex_jpos ; state.ex_add ; state.ex_out2 ; state.ex_out ; state.ex_in2 ; state.ex_in ; state.ex_call ; state.ex_return ; state.ex_jzero ; state.ex_jneg ; state.ex_jump ; state.ex_shift ; state.ex_xor ; state.ex_or ; state.ex_and ; state.ex_addi ; state.ex_sub ; state.ex_loadi ; state.ex_store2 ; state.ex_store ; state.ex_load ; state.ex_nop ; state.decode ; state.fetch ; state.init ;
++-----------------+-----------------+---------------+--------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+; state.init      ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 0          ;
+; state.fetch     ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 1           ; 1          ;
+; state.decode    ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 1            ; 0           ; 1          ;
+; state.ex_nop    ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 1            ; 0            ; 0           ; 1          ;
+; state.ex_load   ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 1             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_store  ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 1              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_store2 ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 1               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_loadi  ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 1              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_sub    ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 1            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_addi   ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 1             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_and    ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 1            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_or     ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 1           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_xor    ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 1            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_shift  ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 1              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jump   ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 1             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jneg   ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 1             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jzero  ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 1              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_return ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 1               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_call   ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 1             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_in     ; 0               ; 0             ; 0            ; 0             ; 0            ; 0            ; 1           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_in2    ; 0               ; 0             ; 0            ; 0             ; 0            ; 1            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_out    ; 0               ; 0             ; 0            ; 0             ; 1            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_out2   ; 0               ; 0             ; 0            ; 1             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_add    ; 0               ; 0             ; 1            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jpos   ; 0               ; 1             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jnzero ; 1               ; 0             ; 0            ; 0             ; 0            ; 0            ; 0           ; 0             ; 0               ; 0              ; 0             ; 0             ; 0              ; 0            ; 0           ; 0            ; 0             ; 0            ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
++-----------------+-----------------+---------------+--------------+---------------+--------------+--------------+-------------+---------------+-----------------+----------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -354,10 +357,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 287   ;
+; Total registers                              ; 290   ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 103   ;
+; Number of registers using Asynchronous Clear ; 106   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 193   ;
 ; Number of registers using Preset             ; 0     ;
@@ -369,12 +372,13 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 110 bits  ; 220 LEs       ; 110 LEs              ; 110 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[3][1]        ;
+; 3:1                ; 110 bits  ; 220 LEs       ; 110 LEs              ; 110 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[2][9]        ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |SCOMP_System|SWITCHES_PLUS:inst3|saved_sim[6] ;
-; 9:1                ; 11 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[1]                 ;
-; 11:1               ; 16 bits   ; 112 LEs       ; 96 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[2]                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|SWITCHES_PLUS:inst3|Selector1    ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 18 LEs               ; -3 LEs                 ; No         ; |SCOMP_System|SWITCHES_PLUS:inst3|Selector19   ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[2]                 ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[5]                 ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|SWITCHES_PLUS:inst3|Selector2    ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 18 LEs               ; -3 LEs                 ; No         ; |SCOMP_System|SWITCHES_PLUS:inst3|Selector18   ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 48 LEs               ; 80 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
@@ -899,28 +903,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 64                          ;
-; cycloneiii_ff         ; 287                         ;
-;     CLR               ; 72                          ;
+; cycloneiii_ff         ; 290                         ;
+;     CLR               ; 75                          ;
 ;     CLR SCLR          ; 1                           ;
 ;     ENA               ; 163                         ;
 ;     ENA CLR           ; 20                          ;
 ;     ENA CLR SLD       ; 10                          ;
 ;     SCLR              ; 19                          ;
 ;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 711                         ;
-;     arith             ; 57                          ;
-;         2 data inputs ; 41                          ;
+; cycloneiii_lcell_comb ; 752                         ;
+;     arith             ; 58                          ;
+;         2 data inputs ; 42                          ;
 ;         3 data inputs ; 16                          ;
-;     normal            ; 654                         ;
+;     normal            ; 694                         ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 26                          ;
+;         2 data inputs ; 23                          ;
 ;         3 data inputs ; 263                         ;
-;         4 data inputs ; 355                         ;
+;         4 data inputs ; 398                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 4.50                        ;
+; Average LUT depth     ; 4.72                        ;
 +-----------------------+-----------------------------+
 
 
@@ -939,7 +943,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 Patches 0.02std SC Lite Edition
-    Info: Processing started: Sat Jul 25 17:13:01 2026
+    Info: Processing started: Sat Jul 25 18:28:28 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
@@ -1036,9 +1040,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
     Info (12023): Found entity 1: PLL_altpll File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/db/pll_altpll.v Line: 31
 Info (12128): Elaborating entity "PLL_altpll" for hierarchy "PLL:inst1|altpll:altpll_component|PLL_altpll:auto_generated" File: t:/altera_lite/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 63
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 63
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 63
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 64
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 64
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 64
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1092,17 +1096,17 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_his3.tdf
     Info (12023): Found entity 1: altsyncram_his3 File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/db/altsyncram_his3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_his3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_his3:auto_generated" File: t:/altera_lite/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 90
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 90
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 90
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 91
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 91
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 91
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 114
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 114
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 114
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 115
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/SCOMP.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
@@ -1111,8 +1115,6 @@ Warning (10492): VHDL Process Statement warning at TIMER.vhd(48): signal "IO_WRI
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Info (12128): Elaborating entity "SWITCHES_PLUS" for hierarchy "SWITCHES_PLUS:inst3"
-Warning (10036): Verilog HDL or VHDL warning at Switchesplus.vhd(47): object "read_pulse" assigned a value but never read File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/Switchesplus.vhd Line: 47
-Warning (10036): Verilog HDL or VHDL warning at Switchesplus.vhd(48): object "write_pulse" assigned a value but never read File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/Switchesplus.vhd Line: 48
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|IO_DATA[0]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[0]" into an OR gate File: C:/Users/Tyler Whelan/Documents/GitHub/SwitchesPlusPlus/SCOMP_Lab8_Lite/DIG_IN.vhd Line: 16
@@ -1135,15 +1137,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 879 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 919 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 798 logic cells
+    Info (21061): Implemented 838 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
     Info: Peak virtual memory: 4963 megabytes
-    Info: Processing ended: Sat Jul 25 17:13:09 2026
+    Info: Processing ended: Sat Jul 25 18:28:36 2026
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:19
 

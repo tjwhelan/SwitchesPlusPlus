@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sat Jul 25 18:28:55 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 Patches 0.02std SC Lite Edition
+Revision Name : SCOMP
+Top-level Entity Name : SCOMP_System
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 786 / 49,760 ( 2 % )
+    Total combinational functions : 749 / 49,760 ( 2 % )
+    Dedicated logic registers : 290 / 49,760 ( < 1 % )
+Total registers : 290
+Total pins : 64 / 360 ( 18 % )
+Total virtual pins : 0
+Total memory bits : 32,768 / 1,677,312 ( 2 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )

@@ -34,11 +34,12 @@ architecture a of SCOMP is
 	type state_type is (
 		init, fetch, decode,
 		ex_nop, ex_load, ex_store, ex_store2,
-		ex_loadi, ex_add, ex_addi,
+		ex_loadi, ex_sub, ex_addi,
 		ex_and, ex_or, ex_xor, ex_shift,
 		ex_jump, ex_jneg, ex_jzero,
 		ex_return, ex_call,
-		ex_in, ex_in2, ex_out, ex_out2
+		ex_in, ex_in2, ex_out, ex_out2,
+		ex_add, ex_jpos, ex_jnzero
 	);
 
 	-- custom type for the call stack
@@ -155,8 +156,9 @@ begin
 						when "00011"  =>        -- loadi
 							state <= ex_loadi;
 						when "00100"  =>        -- add
-							state <= ex_add;
-
+							state <= ex_add;		
+						when "00101" =>			-- sub
+							state <= ex_sub;
 						when "00110"  =>        -- addi
 							state <= ex_addi;
 						when "00111"  =>        -- and
@@ -171,10 +173,12 @@ begin
 							state <= ex_jump;
 						when "01100"  =>        -- jneg
 							state <= ex_jneg;
-
+						when "01101" =>			-- jpos
+							state <= ex_jpos;
 						when "01110"  =>        -- jzero
-							state <= ex_jzero;
-
+							state <= ex_jzero;	
+						when "01111" =>			-- jnzero
+							state <= ex_jnzero;	
 						when "10000"  =>        -- call
 							state <= ex_call;
 						when "10001"  =>        -- return
@@ -208,6 +212,10 @@ begin
 					AC    <= AC + mem_data;   -- addition
 					state <= fetch;
 
+				when ex_sub =>
+					AC 	<= AC - mem_data;		-- subtraction
+					state <= fetch;
+					
 				when ex_addi =>
 					-- sign extension
 					AC    <= AC + (IR(10) & IR(10) & IR(10) &
@@ -224,12 +232,24 @@ begin
 					end if;
 					state <= fetch;
 
+				when ex_jpos =>
+					if (AC(15) = '0') and (AC /= x"0000") then
+						PC		<= operand;
+					end if;
+					state <= fetch;
+				
 				when ex_jzero =>
 					if (AC = x"0000") then
 						PC    <= operand;
 					end if;
 					state <= fetch;
 
+				when ex_jnzero =>
+					if (AC /= x"0000") then
+						PC <= operand;
+					end if;
+					state <= fetch;
+					
 				when ex_and =>
 					AC    <= AC and mem_data; -- logical bitwise AND
 					state <= fetch;
