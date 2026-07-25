@@ -1,6 +1,6 @@
 Flow report for SCOMP
-Sat Jul 25 14:49:38 2026
-Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Sat Jul 25 17:13:09 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 Patches 0.02std SC Lite Edition
 
 
 ---------------------
@@ -38,28 +38,28 @@ on the Quartus Prime software download page.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Flow Summary                                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sat Jul 25 14:49:38 2026           ;
-; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
-; Revision Name                      ; SCOMP                                           ;
-; Top-level Entity Name              ; SCOMP_System                                    ;
-; Family                             ; MAX 10                                          ;
-; Device                             ; 10M50DAF484C7G                                  ;
-; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 752                                             ;
-;     Total combinational functions  ; 697                                             ;
-;     Dedicated logic registers      ; 287                                             ;
-; Total registers                    ; 287                                             ;
-; Total pins                         ; 64                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 32,768                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 1                                               ;
-; UFM blocks                         ; 0                                               ;
-; ADC blocks                         ; 0                                               ;
-+------------------------------------+-------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Flow Summary                                                                                         ;
++------------------------------------+-----------------------------------------------------------------+
+; Flow Status                        ; Successful - Sat Jul 25 17:13:09 2026                           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 Patches 0.02std SC Lite Edition ;
+; Revision Name                      ; SCOMP                                                           ;
+; Top-level Entity Name              ; SCOMP_System                                                    ;
+; Family                             ; MAX 10                                                          ;
+; Device                             ; 10M50DAF484C7G                                                  ;
+; Timing Models                      ; Final                                                           ;
+; Total logic elements               ; 760                                                             ;
+;     Total combinational functions  ; 705                                                             ;
+;     Dedicated logic registers      ; 287                                                             ;
+; Total registers                    ; 287                                                             ;
+; Total pins                         ; 64                                                              ;
+; Total virtual pins                 ; 0                                                               ;
+; Total memory bits                  ; 32,768                                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                                               ;
+; Total PLLs                         ; 1                                                               ;
+; UFM blocks                         ; 0                                                               ;
+; ADC blocks                         ; 0                                                               ;
++------------------------------------+-----------------------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/25/2026 14:49:29 ;
+; Start date & time ; 07/25/2026 17:13:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SCOMP               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ on the Quartus Prime software download page.
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 ; ADVANCED_PHYSICAL_OPTIMIZATION      ; -- (Not supported for targeted family) ; --            ; --           ; --                                ;
-; COMPILER_SIGNATURE_ID               ; 248790817849683.178500536913548        ; --            ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 163131990098259.178501398107156        ; --            ; --           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
@@ -112,8 +112,8 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4932 MB             ; 00:00:18                           ;
-; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4963 MB             ; 00:00:19                           ;
+; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:19                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,7 +122,7 @@ on the Quartus Prime software download page.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Tylers-Lenovo    ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-CF2TP47  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

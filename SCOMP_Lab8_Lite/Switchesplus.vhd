@@ -45,6 +45,7 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
 
   --signal that controls when reads occur (allows for latching)
   SIGNAL read_pulse        : STD_LOGIC;
+  SIGNAL write_pulse       : STD_LOGIC;
 
   -- Registers for modes
   SIGNAL sim_status        : STD_LOGIC; --simulation active or not
@@ -66,7 +67,8 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
     mode_helper <= IO_READ & IO_ADDR;
     read_pulse <= '1' WHEN (IO_READ = '1') AND (mode /= invalid) else
                   '0';
-    
+    write_pulse <= '1' WHEN (IO_WRITE = '1') AND (mode /= invalid) else '0';
+
     --mode assignments that allow the same address to be written to and read from
     WITH mode_helper SELECT
         mode <= m_bit_def        WHEN "100001100000",
@@ -86,7 +88,7 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
                 invalid          WHEN OTHERS;
 
     --combinational logic calculations
-    PROCESS(switches_input)
+    PROCESS(switches_input, difference_mask, password_reg)
       VARIABLE pop_temp_count    : INTEGER RANGE 0 TO 10;
       VARIABLE change_temp_count : INTEGER RANGE 0 TO 10;
     BEGIN
@@ -118,7 +120,7 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
     count_low <= "1010" - count_high; -- 10 minus # of high switches
 
     --reset and sequential logic features
-    PROCESS(CLK, RESETN)
+    PROCESS(RESETN, CLK)
     BEGIN
         IF (RESETN = '0') THEN
             --resets all concurrent registers (exist over multiple reads)
@@ -127,12 +129,12 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
             saved_sim     <= "0000000000";
             sim_status    <= '0';
         ELSIF (RISING_EDGE(CLK)) THEN
-            IF (read_pulse = '1') THEN
+            IF (IO_READ = '1') THEN
                 last_read_reg <= switches_input;
                 IF (sim_status = '1') THEN
                     sim_status <= '0';
                 END IF;
-            ELSE
+            ELSIF (IO_WRITE = '1') THEN
                 CASE mode is
                     WHEN m_password_write =>
                         password_reg <= switches_input;

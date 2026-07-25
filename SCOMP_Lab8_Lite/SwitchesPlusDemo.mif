@@ -1,0 +1,16 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 1800; -- 	LOADI 0
+0001: 903C; -- 	IN bit_def
+0002: 9801; -- 	OUT LEDs
+0003: 5803; -- 	JUMP Finish
+0004: 0000; -- Pattern:   DW 0
+0005: 0001; -- Bit0:      DW &B0000000001
+0006: 0200; -- Bit9:      DW &B1000000000
+[0007..07FF] : 0000; -- [empty memory]
+END;
