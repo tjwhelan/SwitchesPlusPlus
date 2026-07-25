@@ -1,3 +1,3 @@
--to run: change switchesplusdemo.asm, assemble it with SCASM, and compile it with quartus\n
--need to add all addresses into the .asm file (bit_def EQU 096 and so on)\n
+-to run: change switchesplusdemo.asm, assemble it with SCASM, and compile it with quartus
+-need to add all addresses into the .asm file (bit_def EQU 096 and so on)
 -switchesplus.vhd still busted probably, but bit_def, bit_inv, pop_high, and pop_low definetly work\n
