@@ -5,12 +5,9 @@ ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-0000: 1800; -- 	LOADI 0
-0001: 9060; -- 	IN bit_def
-0002: 9064; -- 	IN change_mask
+0000: 1830; -- 	LOADI &B0000110000
+0001: 9868; -- 	OUT sim_softsave
+0002: 9069; -- 	IN sim_status
 0003: 9801; -- 	OUT LEDs
-0004: 9065; -- 	IN change_num
-0005: 9804; -- 	OUT Hex0
-0006: 5802; -- 	JUMP Loop
-[0007..07FF] : 0000; -- [empty memory]
+[0004..07FF] : 0000; -- [empty memory]
 END;

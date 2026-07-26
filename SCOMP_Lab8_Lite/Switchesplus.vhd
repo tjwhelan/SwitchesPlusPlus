@@ -123,9 +123,9 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
             sim_status    <= '0';
         ELSIF (RISING_EDGE(CLK)) THEN
             IF (IO_READ = '1') THEN
-                IF (mode /= m_change_mask AND mode /= m_change_num) THEN
+                IF (mode /= m_change_mask AND mode /= m_change_num AND mode /= m_sim_status) THEN
                     last_read_reg <= switches_input;
-                    IF (sim_status = '1' AND mode /= m_sim_status) THEN
+                    IF (sim_status = '1') THEN
                         sim_status <= '0';
                     END IF;
                 END IF;

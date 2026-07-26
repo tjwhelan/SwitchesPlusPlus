@@ -1,14 +1,10 @@
 ; SwitchesPlusDemo.asm
 
 ORG 0
-	LOADI 0
-	IN bit_def
-Loop:
-	IN change_mask
+	LOADI &B0000110000
+	OUT sim_softsave
+	IN sim_status
 	OUT LEDs
-	IN change_num
-	OUT Hex0
-	JUMP Loop
 
 
 ; IO address constants
