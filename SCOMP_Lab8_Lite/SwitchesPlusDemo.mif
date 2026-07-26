@@ -6,8 +6,11 @@ DATA_RADIX=HEX;
 
 CONTENT BEGIN
 0000: 1800; -- 	LOADI 0
-0001: 9062; -- 	IN pop_high
-0002: 9801; -- 	OUT LEDs
-0003: 5803; -- 	JUMP Finish
-[0004..07FF] : 0000; -- [empty memory]
+0001: 9060; -- 	IN bit_def
+0002: 9064; -- 	IN change_mask
+0003: 9801; -- 	OUT LEDs
+0004: 9065; -- 	IN change_num
+0005: 9804; -- 	OUT Hex0
+0006: 5802; -- 	JUMP Loop
+[0007..07FF] : 0000; -- [empty memory]
 END;
