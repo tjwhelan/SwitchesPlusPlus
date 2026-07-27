@@ -104,7 +104,7 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
         difference_amt <= CONV_STD_LOGIC_VECTOR(change_temp_count, 4);
 
         --password mode calculations
-        IF password_reg = switches_input THEN
+        IF password_reg = switches_input THEN -- Compare target password to the current siwtch value
             password_correct <= '1';
         ELSE
             password_correct <= '0';
@@ -125,7 +125,7 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
             IF (IO_READ = '1') THEN
                 IF (mode /= m_change_mask AND mode /= m_change_num AND mode /= m_sim_status) THEN
                     last_read_reg <= switches_input;
-                    IF (sim_status = '1') THEN
+                    IF (sim_status = '1') THEN -- Clear sim mode when reading normal switch
                         sim_status <= '0';
                     END IF;
                 END IF;
@@ -133,15 +133,15 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
                 CASE mode is
                     WHEN m_password_write =>
                         password_reg <= switches_input;
-                        IF (sim_status = '1') THEN
+                        IF (sim_status = '1') THEN -- Disable sim mode when writing new password
                             sim_status <= '0';
                         END IF;
                     WHEN m_sim_snapsave =>
                         saved_sim <= switches_input;
-                        sim_status <= '1';
+                        sim_status <= '1'; -- Enable sim mode
                     WHEN m_sim_softsave =>
-                        saved_sim <= IO_DATA(9 DOWNTO 0);
-                        sim_status <= '1';
+                        saved_sim <= IO_DATA(9 DOWNTO 0); -- 
+                        sim_status <= '1'; -- Enable sim mode
                     WHEN OTHERS =>
                         NULL;
                 END CASE;
