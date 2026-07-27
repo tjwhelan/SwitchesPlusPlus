@@ -5,9 +5,32 @@ ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-0000: 1830; -- 	LOADI &B0000110000
-0001: 9868; -- 	OUT sim_softsave
-0002: 9069; -- 	IN sim_status
-0003: 9801; -- 	OUT LEDs
-[0004..07FF] : 0000; -- [empty memory]
+0000: 1800; -- 	LOADI 0
+0001: 9060; -- 	IN bit_def
+0002: 9065; -- 	IN change_num
+0003: 7002; -- 	JZERO WaitForChange
+0004: 9060; -- 	IN bit_def
+0005: 0818; -- 	LOAD Goal
+0006: 3001; -- 	ADDI 1
+0007: 1018; -- 	STORE Goal
+0008: 9065; -- 	IN change_num
+0009: 7005; -- 	JZERO GenerateNumber
+000A: 0818; -- 	LOAD Goal
+000B: 381A; -- 	AND LSB10Mask
+000C: 1018; -- 	STORE Goal
+000D: 9804; -- 	OUT Hex0
+000E: 0818; -- 	LOAD Goal
+000F: 9801; -- 	OUT LEDs
+0010: 9868; -- 	OUT sim_softsave
+0011: 9866; -- 	OUT password
+0012: 9802; -- 	OUT Timer
+0013: 9066; -- 	IN password
+0014: 7013; -- 	JZERO Loop
+0015: 18AA; -- 	LOADI &H00AA
+0016: 9805; -- 	OUT Hex1
+0017: 5817; -- 	JUMP Finish
+0018: 0000; -- Goal: DW 0
+0019: 0000; -- Score: DW 0
+001A: 03FF; -- LSB10Mask: DW &B1111111111
+[001B..07FF] : 0000; -- [empty memory]
 END;

@@ -133,6 +133,9 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
                 CASE mode is
                     WHEN m_password_write =>
                         password_reg <= switches_input;
+                        IF (sim_status = '1') THEN
+                            sim_status <= '0';
+                        END IF;
                     WHEN m_sim_snapsave =>
                         saved_sim <= switches_input;
                         sim_status <= '1';

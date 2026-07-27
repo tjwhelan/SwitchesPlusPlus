@@ -1,11 +1,47 @@
 ; SwitchesPlusDemo.asm
 
 ORG 0
-	LOADI &B0000110000
-	OUT sim_softsave
-	IN sim_status
-	OUT LEDs
+	LOADI 0
+	IN bit_def
+WaitForChange:
+	IN change_num
+	JZERO WaitForChange
+	
+	IN bit_def
+GenerateNumber:
+	LOAD Goal
+	ADDI 1
+	STORE Goal
+	IN change_num
+	JZERO GenerateNumber
+	
+	;Make goal only 10 bits wide
+	LOAD Goal
+	AND LSB10Mask
+	STORE Goal
+	OUT Hex0
 
+	LOAD Goal
+	OUT LEDs
+	OUT sim_softsave
+	OUT password
+	OUT Timer
+Loop:
+	IN password
+	JZERO Loop
+	LOADI &H00AA
+	OUT Hex1
+Finish:
+	JUMP Finish
+
+
+
+;Variables
+Goal: DW 0
+Score: DW 0
+
+;Constants
+LSB10Mask: DW &B1111111111
 
 ; IO address constants
 Switches:  		EQU 000
