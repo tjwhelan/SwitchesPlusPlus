@@ -32,9 +32,6 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
                      m_sim_snapsave,
                      m_sim_softsave,
                      m_sim_status,
-                     m_filo_en,
-                     m_filo_read,
-                     m_filo_status,
                      invalid);
   --signal that tracks mode
   SIGNAL mode : MODE_TYPE;
@@ -45,7 +42,6 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
 
   -- Registers for modes
   SIGNAL sim_status        : STD_LOGIC; --simulation active or not
-  SIGNAL filo_enabled      : STD_LOGIC; --filo enabled or not
   SIGNAL count_high        : STD_LOGIC_VECTOR(3 DOWNTO 0); --population mode: stores # of switches high
   SIGNAL count_low         : STD_LOGIC_VECTOR(3 DOWNTO 0); --population mode: stores # of switches low
   SIGNAL last_read_reg     : STD_LOGIC_VECTOR(9 DOWNTO 0); --change mode: stores most recent read
@@ -75,9 +71,6 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
                 m_sim_snapsave   WHEN "000001100111", --write
                 m_sim_softsave   WHEN "000001101000", --write
                 m_sim_status     WHEN "100001101001",
-                m_filo_en        WHEN "000001101010", --write
-                m_filo_read      WHEN "000001101011", --write
-                m_filo_status    WHEN "100001101100",
                 invalid          WHEN OTHERS;
 
     --combinational logic calculations
