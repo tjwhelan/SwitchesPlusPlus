@@ -97,7 +97,7 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
         difference_amt <= CONV_STD_LOGIC_VECTOR(change_temp_count, 4);
 
         --password mode calculations
-        IF password_reg = switches_input THEN -- Compare target password to the current siwtch value
+        IF password_reg = switches_input THEN -- Compare target password to the current switch value
             password_correct <= '1';
         ELSE
             password_correct <= '0';
@@ -116,6 +116,9 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
             sim_status    <= '0';
         ELSIF (RISING_EDGE(CLK)) THEN
             IF (IO_READ = '1') THEN
+                --last_read_reg isn't updated when reading in change mode, would defeat the point
+                --last_read_reg also isn't updated when reading in sim_status mode because it would
+                -- fire the simulated read 
                 IF (mode /= m_change_mask AND mode /= m_change_num AND mode /= m_sim_status) THEN
                     last_read_reg <= switches_input;
                     IF (sim_status = '1') THEN -- Clear sim mode when reading normal switch
@@ -124,14 +127,17 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
                 END IF;
             ELSIF (IO_WRITE = '1') THEN
                 CASE mode is
+                    --updates password register with a bitmask of the physical switches
                     WHEN m_password_write =>
                         password_reg <= switches_input;
                         IF (sim_status = '1') THEN -- Disable sim mode when writing new password
                             sim_status <= '0';
                         END IF;
+                    --updates simulation register with a bitmask of the physical switches
                     WHEN m_sim_snapsave =>
                         saved_sim <= switches_input;
                         sim_status <= '1'; -- Enable sim mode
+                    --updates simulation register with whats in the AC
                     WHEN m_sim_softsave =>
                         saved_sim <= IO_DATA(9 DOWNTO 0); -- 
                         sim_status <= '1'; -- Enable sim mode
@@ -144,14 +150,14 @@ ARCHITECTURE a OF SWITCHES_PLUS IS
     
     WITH mode SELECT
         IO_DATA <=
-            "000000" & switches_input                     WHEN m_bit_def,  -- bit_def: default switch bitmask
-            "000000" & (NOT switches_input)               WHEN m_bit_inv,  -- bit_inv: inverted switch bitmask
-            "000000000000" & count_high                   WHEN m_pop_high, -- pop_high: count of active-high switches
-            "000000000000" & count_low                    WHEN m_pop_low, -- pop_low: count of active-low switches
-            "000000" & difference_mask                    WHEN m_change_mask, --change_mask
-            "000000000000" & difference_amt               WHEN m_change_num, --change_num
-            "000000000000000" & password_correct          WHEN m_password_read, --password_read
-            "000000000000000" & sim_status                WHEN m_sim_status, --sim_status           
+            "000000" & switches_input                     WHEN m_bit_def,       -- bit_def: default switch bitmask
+            "000000" & (NOT switches_input)               WHEN m_bit_inv,       -- bit_inv: inverted switch bitmask
+            "000000000000" & count_high                   WHEN m_pop_high,      -- pop_high: count of active-high switches
+            "000000000000" & count_low                    WHEN m_pop_low,       -- pop_low: count of active-low switches
+            "000000" & difference_mask                    WHEN m_change_mask,   -- change_mask: bitmask of flipped switches
+            "000000000000" & difference_amt               WHEN m_change_num,    -- change_num: number of flipped switches
+            "000000000000000" & password_correct          WHEN m_password_read, -- password_read: '1' if switch bitmask = password
+            "000000000000000" & sim_status                WHEN m_sim_status,    -- sim_status: '1' if the next read is simulated
             "ZZZZZZZZZZZZZZZZ"                            WHEN OTHERS;
         
 END a;
