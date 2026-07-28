@@ -5,32 +5,84 @@ ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
 
 CONTENT BEGIN
-0000: 1800; -- 	LOADI 0
-0001: 9060; -- 	IN bit_def
-0002: 9065; -- 	IN change_num
-0003: 7002; -- 	JZERO WaitForChange
-0004: 9060; -- 	IN bit_def
-0005: 0818; -- 	LOAD Goal
-0006: 3001; -- 	ADDI 1
-0007: 1018; -- 	STORE Goal
-0008: 9065; -- 	IN change_num
-0009: 7005; -- 	JZERO GenerateNumber
-000A: 0818; -- 	LOAD Goal
-000B: 381A; -- 	AND LSB10Mask
-000C: 1018; -- 	STORE Goal
-000D: 9804; -- 	OUT Hex0
-000E: 0818; -- 	LOAD Goal
-000F: 9801; -- 	OUT LEDs
-0010: 9868; -- 	OUT sim_softsave
-0011: 9866; -- 	OUT password
-0012: 9802; -- 	OUT Timer
-0013: 9066; -- 	IN password
-0014: 7013; -- 	JZERO Loop
-0015: 18AA; -- 	LOADI &H00AA
-0016: 9805; -- 	OUT Hex1
-0017: 5817; -- 	JUMP Finish
-0018: 0000; -- Goal: DW 0
-0019: 0000; -- Score: DW 0
-001A: 03FF; -- LSB10Mask: DW &B1111111111
-[001B..07FF] : 0000; -- [empty memory]
+0000: 0881; -- 	LOAD    TestSimPattern
+0001: 9868; -- 	OUT     sim_softsave
+0002: 9069; -- 	IN      sim_status
+0003: 387D; -- 	AND     Bit0Mask
+0004: 7012; -- 	JZERO   Mode0_Fail
+0005: 9060; -- 	IN      bit_def
+0006: 2881; -- 	SUB     TestSimPattern
+0007: 7812; -- 	JNZ     Mode0_Fail
+0008: 0881; -- 	LOAD    TestSimPattern
+0009: 9868; -- 	OUT     sim_softsave
+000A: 9061; -- 	IN      bit_inv
+000B: 3881; -- 	AND     TestSimPattern
+000C: 7812; -- 	JNZ     Mode0_Fail
+000D: 0887; -- 	LOAD    HexD
+000E: 9805; -- 	OUT     Hex1
+000F: 9000; -- 	IN      Switches
+0010: 9867; -- 	OUT     sim_snapsave
+0011: 5815; -- 	JUMP    Mode1
+0012: 0885; -- 	LOAD    HexE
+0013: 9805; -- 	OUT     Hex1
+0014: 5812; -- 	JUMP    Mode0_Fail
+0015: 087A; -- 	LOAD    Zero
+0016: 9801; -- 	OUT     LEDs              
+0017: 9063; -- 	IN      PopLow
+0018: 1078; -- 	STORE   TempPop
+0019: 087C; -- 	LOAD    Ten
+001A: 2878; -- 	SUB     TempPop
+001B: 9804; -- 	OUT     Hex0 
+001C: 701E; --     JZERO   Mode1_Pass
+001D: 5817; -- 	JUMP    Mode1_Loop
+001E: 0884; -- 	LOAD    HexC                
+001F: 9805; -- 	OUT     Hex1
+0020: 087F; -- 	LOAD    TenBitMask
+0021: 9801; -- 	OUT     LEDs 
+0022: 5823; -- 	JUMP    Mode2_Loop
+0023: 9065; -- 	IN      ChangeNum
+0024: 1079; -- 	STORE   TempChange
+0025: 0879; -- 	LOAD    TempChange
+0026: 287B; -- 	SUB     One
+0027: 6829; -- 	JPOS    Mode2_Bump
+0028: 5823; --     JUMP	Mode2_Loop
+0029: 0883; -- 	LOAD    HexB               
+002A: 9805; -- 	OUT     Hex1                
+002B: 9064; -- 	IN      ChangeMask          
+002C: 9801; -- 	OUT     LEDs
+002D: 582E; --     JUMP	Mode3_Init
+002E: 0880; --     LOAD    PasscodeKey
+002F: 9868; --     OUT     sim_softsave        
+0030: 9866; --     OUT     Password            
+0031: 9060; --     IN      bit_def
+0032: 9062; -- 	IN		PopHigh
+0033: 7832; --     JNZ		Mode3_Pre_Loop
+0034: 9801; --     OUT		LEDs
+0035: 9066; --     IN      Password
+0036: 387D; --     AND     Bit0Mask
+0037: 7839; --     JNZ     Mode3_Match
+0038: 5834; --     JUMP    Mode3_Loop
+0039: 0886; --     LOAD    HexA
+003A: 9805; --     OUT     Hex1
+003B: 087D; --     LOAD    Bit0Mask
+003C: 9801; --     OUT     LEDs
+003D: 5815; --     JUMP    Mode1
+[003E..0077] : 0000; -- [empty memory]
+0078: 0000; -- TempPop:        DW 0
+0079: 0000; -- TempChange:     DW 0
+007A: 0000; -- Zero:           DW 0
+007B: 0001; -- One:            DW 1
+007C: 000A; -- Ten:            DW 10
+007D: 0001; -- Bit0Mask:       DW &B0000000001
+007E: 0002; -- Key1Mask:       DW &B0000000010
+007F: 03FF; -- TenBitMask:     DW &B1111111111
+0080: 0333; -- PasscodeKey:    DW &B1100110011       ; Preset Autopilot key
+0081: 02AA; -- TestSimPattern: DW &B1010101010
+0082: 0000; -- Hex0Val:        DW &H0000
+0083: 000B; -- HexB:           DW &H000B
+0084: 000C; -- HexC:           DW &H000C
+0085: 000E; -- HexE:           DW &H000E
+0086: 000A; -- HexA:           DW &H000A
+0087: 000D; -- HexD:           DW &H000D
+[0088..07FF] : 0000; -- [empty memory]
 END;
